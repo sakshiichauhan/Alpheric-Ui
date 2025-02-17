@@ -36,20 +36,7 @@ const cardsData = [
     return (
       <div>
         {/* Header Section */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="h-screen flex flex-col justify-center items-center"
-        >
-          <h1 className="text-[140px] text-center font-semibold">
-            Our Process
-          </h1>
-          <p className="text-gray-500 text-[40px] text-center">
-            How we work together
-          </p>
-        </motion.div>
-
+       
         {/* Sticky Scroll Section */}
         <div ref={containerRef} className="relative h-[300vh]">
           <div className="sticky top-0 h-screen flex items-center overflow-hidden">
