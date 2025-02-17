@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from "framer-motion";
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from "framer-motion";
 import BriefCard from "../../Components/BriefCard"
 import Brief from "../../assets/Brief/Brief.png";
 import Proposal from '../../assets/Brief/Proposal.jpg';
@@ -27,40 +27,45 @@ const cardsData = [
   ];
   
   const BriefPage = () => {
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+      target: containerRef,
+      offset: ["start start", "end end"]
+    });
+
     return (
-      <motion.div
-        className="space-y-12"
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.3,
-            },
-          },
-        }}
-      >
-        {cardsData.map((card, index) => (
-          <motion.div
-            key={index}
-            variants={{
-              hidden: { opacity: 0, y: 50, scale: 0.9 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: { duration: 0.6, ease: 'easeOut' },
-              },
-            }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <BriefCard {...card} />
-          </motion.div>
-        ))}
-      </motion.div>
+      <div>
+        {/* Header Section */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="h-screen flex flex-col justify-center items-center"
+        >
+          <h1 className="text-[140px] text-center font-semibold">
+            Our Process
+          </h1>
+          <p className="text-gray-500 text-[40px] text-center">
+            How we work together
+          </p>
+        </motion.div>
+
+        {/* Sticky Scroll Section */}
+        <div ref={containerRef} className="relative h-[300vh]">
+          <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+            <div className="relative w-full max-w-7xl mx-auto">
+              {cardsData.map((card, index) => (
+                <BriefCard
+                  key={index}
+                  {...card}
+                  scrollYProgress={scrollYProgress}
+                  index={index}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     );
   };
   
