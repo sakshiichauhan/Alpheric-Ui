@@ -79,7 +79,7 @@ export default function Customers() {
           className="w-1/2 h-[200vh] sticky top-0 flex items-center justify-center overflow-visible"
           ref={ref}
         >
-          <motion.div style={{ x: translateX }} className="relative w-[800px]">
+          <motion.div style={{ x: translateX }} className="relative w-[800px] top-60">
             {/* Logo rows remain unchanged */}
             {/* Top Row */}
             <div className="flex items-center justify-center gap-8 mb-8">

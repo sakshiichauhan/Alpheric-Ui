@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import SolutionCard from "../../Components/SolutionCard";
 
 // Images imports
@@ -56,29 +56,51 @@ const cardsData = [
 ];
 
 const SolutionPage = () => {
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
+
     return (
         <div>
-            <div className="h-screen flex flex-col font-instrument-sans justify-center items-center">
-                <div className="flex align-center items-center text-[140px] text-center font-semibold ">What Are We Fighting Against?</div>
-                <div className="text-gray-500 text-[40px] text-center">Users not engaging with your design or project</div>
-                <div className="text-gray-500 text-[38px] text-center">Let's turn that challenge into an opportunities.</div>
+            {/* Header section */}
+            <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="h-screen flex flex-col font-instrument-sans justify-center items-center"
+            >
+                <div className="flex align-center items-center text-[140px] text-center font-semibold">
+                    What Are We Fighting Against?
+                </div>
+                <div className="text-gray-500 text-[40px] text-center">
+                    Users not engaging with your design or project
+                </div>
+                <div className="text-gray-500 text-[38px] text-center">
+                    Let's turn that challenge into opportunities.
+                </div>
+            </motion.div>
+            
+            {/* Sticky Scroll Section using SolutionCard */}
+            <div ref={containerRef} className="relative h-[400vh]">
+                <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+                    <div className="relative w-full max-w-7xl mx-auto">
+                        {cardsData.map((card, index) => (
+                            <SolutionCard
+                                key={index}
+                                title={card.title}
+                                description={card.description}
+                                imageUrl={card.imageUrl}
+                                tags={card.tags}
+                                scrollYProgress={scrollYProgress}
+                                index={index}
+                            />
+                        ))}
+                    </div>
+                </div>
             </div>
-        <div className="relative space-y-12 px-4 overflow-hidden">
-            {cardsData.map((card, index) => (
-                <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    viewport={{ once: false, amount: 0.3 }}
-                >
-                    <SolutionCard {...card} />
-                </motion.div>
-            ))}
-
         </div>
-        </div>
-
     );
 };
 
