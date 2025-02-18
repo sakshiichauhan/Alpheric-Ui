@@ -1,17 +1,45 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const SolutionTag = ({ tagName }) => {
+const SolutionTag = ({ tagName, index }) => {
+    const tagVariants = {
+        initial: { 
+            opacity: 0, 
+            scale: 0.8,
+            y: 20 
+        },
+        animate: { 
+            opacity: 1, 
+            scale: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+                delay: index ? index * 0.1 : 0, // Stagger effect based on index
+                duration: 0.5
+            }
+        },
+        hover: {
+            scale: 1.05,
+            transition: {
+                type: "spring",
+                stiffness: 400,
+                damping: 25
+            }
+        },
+        tap: {
+            scale: 0.95
+        }
+    };
+
     return (
         <motion.button
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{
-                duration: 0.2,
-                ease: "easeOut"
-            }}
+            variants={tagVariants}
+            initial="initial"
+            animate="animate"
+            whileHover="hover"
+            whileTap="tap"
             className={`
                 font-urbanist 
                 px-4 
