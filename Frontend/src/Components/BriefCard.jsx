@@ -49,7 +49,7 @@ const BriefCard = ({
     <div className="absolute inset-0 flex items-center">
       {/* --- Left Text Section --- */}
       <div className="w-1/2 px-12 relative overflow-visible">
-        <motion.div
+        <motion.div      
           style={{ opacity: contentOpacity, y: textY }}
           transition={baseTransition}
           className="relative"
