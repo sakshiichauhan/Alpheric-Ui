@@ -89,7 +89,7 @@ const BriefCard = ({
         </motion.div>
       </div>
     </div>
-  );
+  );                                       
 };
 
 export default BriefCard;

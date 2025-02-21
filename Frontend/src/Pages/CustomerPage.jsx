@@ -95,7 +95,7 @@ export default function Customers() {
                             <div className="w-2 h-2 bg-white rounded-full" />
                             <motion.div className="w-28 h-28 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
                                 <img
-                                    src="Frontend/src/assets/Customer-icons/Gucci.png"
+                                    src="./src/assets/Customer-icons/Gucci.png"
                                     alt="Gucci"
                                     className="w-20 h-20 object-contain"
                                 />
@@ -125,7 +125,7 @@ export default function Customers() {
                             <div className="w-7 h-7 bg-white rounded-full" />
                             <motion.div className="w-28 h-28 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
                                 <img
-                                    src="Frontend/src/assets/Customer-icons/Hm.png"
+                                    src=". /src/assets/Customer-icons/Hm.png"
                                     alt="H&M"
                                     className="w-20 h-20 object-contain"
                                 />
@@ -139,7 +139,7 @@ export default function Customers() {
                                 />
                             </motion.div>
 
-                            <motion.div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
+                            <motion.div cla ssName="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
                                 <img
                                     src="/src/assets/Customer-icons/versace.png"
                                     alt="Versace"

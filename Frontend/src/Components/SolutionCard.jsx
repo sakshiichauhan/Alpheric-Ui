@@ -11,20 +11,17 @@ const SolutionCard = ({
   index,
   totalCards,
 }) => {
-  
   const smoothScrollYProgress = useSpring(scrollYProgress, {
-    stiffness: 50,
-    damping: 15,
+    stiffness: 80,
+    damping: 20,
     restDelta: 0.001,
   });
-
 
   const chunk = 1 / totalCards;
   const start = index * chunk;
   const end = (index + 1) * chunk;
 
-  
-  const imageFadePortion = 0.2 * chunk; 
+  const imageFadePortion = 0.2 * chunk;
   const textFadePortion = 0.4 * chunk;
 
   const imageOpacity = useTransform(
@@ -51,12 +48,9 @@ const SolutionCard = ({
     [0, 1, 1, 0]
   );
 
-  
-
   const baseTransition = {
     duration: 2.5,
     ease: "easeInOut",
-    delay: 0.5,
   };
 
   return (
