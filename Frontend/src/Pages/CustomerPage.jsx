@@ -5,7 +5,7 @@ export default function Customers() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end end"],
+    offset: ["start start", "end end"],      
   });
 
   const translateX = useTransform(scrollYProgress, [0, 3], [0, 600]);
@@ -18,10 +18,10 @@ export default function Customers() {
   const y2 = useTransform(scrollYProgress, [0.3, 0.8], [250, 0]);
   const y3 = useTransform(scrollYProgress, [0.8, 1], [300, 0]);
 
-  return (
+  return (                                                        
     <section className="relative w-full h-[300vh] flex items-center justify-center bg-white">
       <div className="w-full max-w-7xl flex">
-        {/* Left Side */}
+        {/* Left Side */}                      
         <div className="w-1/2 flex flex-col justify-start sticky top-20 h-[100vh]">
           <h2 className="text-[84px] mb-16 font-poppins font-semibold">
             Customers
@@ -51,12 +51,12 @@ export default function Customers() {
                 <p className="text-[32px] font-bold text-gray-700">
                   <span className="text-[18px] font-semibold">01 </span>
                   Visibility &amp; Communication
-                </p>
+                </p>                         
                 <p className="text-[18px] pl-8 text-gray-500 mt-2">
                   Take the assessment and get your career matches, personality
                   archetype, and more along the way.
                 </p>
-              </motion.div>
+              </motion.div> 
             </motion.div>
             <motion.div
               style={{ opacity: opacity2, y: y2 }}
@@ -89,8 +89,8 @@ export default function Customers() {
               </div>
             </motion.div>
           </ul>
-        </div>
-
+        </div>                           
+       
         {/* Right Side - Sticky Animated Logos */}
         <div
           className="w-1/2 h-[200vh] sticky top-0 flex items-center justify-center overflow-x-visible"
@@ -101,7 +101,7 @@ export default function Customers() {
             className="relative w-[800px] top-60"
           >
             {/* Top Row */}
-            <div className="flex items-center justif y-center gap-8 mb-8">
+            <div className="flex items-center justify-center gap-8 mb-8">
               <div className="w-6 h-6 bg-white rounded-full" />
               <div className="w-2 h-2 bg-white rounded-full" />
               <motion.div className="w-28 h-28 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
@@ -135,7 +135,7 @@ export default function Customers() {
               <motion.div className="w-28 h-28 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
                 <img
                   src=". /src/assets/Customer-icons/Hm.png"
-                  alt="H&M"
+                  alt="H&M"                                 
                   className="w-20 h-20 object-contain"
                 />
               </motion.div>
@@ -149,8 +149,7 @@ export default function Customers() {
               </motion.div>
 
               <motion.div
-                cla
-                ssName="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-4"
+                className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-4"
               >
                 <img
                   src="/src/assets/Customer-icons/versace.png"
@@ -159,7 +158,7 @@ export default function Customers() {
                 />
               </motion.div>
             </div>
-
+                                                                                                                                                                
             {/* Third Row */}
             <div className="flex items-center justify-end gap-8 mb-4 mr-8">
               <div className="w-4 h-4 bg-white rounded-full" />
@@ -173,7 +172,7 @@ export default function Customers() {
 
               <motion.div className="w-28 h-28 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
                 <img
-                  src="/src/assets/Customer-icons/Hyundai.png"
+                  src="/src/assets/Customer-icons/Hyundai.png"          
                   alt="Hyundai"
                   className="w-20 h-20 object-contain"
                 />
@@ -185,7 +184,7 @@ export default function Customers() {
                   alt="Zara"
                   className="w-20 h-20 object-contain"
                 />
-              </motion.div>
+              </motion.div>        
             </div>
 
             {/* Fourth Row */}
@@ -194,8 +193,11 @@ export default function Customers() {
                 <img
                   src="/src/assets/Customer-icons/vl.png"
                   alt="Louis Vuitton"
-                  className="w-10 h-10 object-contain"
+                  className="w-10 h-10 object-contain " 
                 />
+              </motion.div> 
+              <motion.div classname="w-10 h-20 bg white ">
+
               </motion.div>
 
               <motion.div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
@@ -215,6 +217,7 @@ export default function Customers() {
             </div>
 
             {/* Fifth Row */}
+
             <div className="flex items-center justify-end gap-4 mb-8">
               <motion.div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
                 <img
@@ -247,10 +250,11 @@ export default function Customers() {
               <div className="w-2 h-2 bg-[#5AC8DC] rounded-full" />
               <motion.div className="w-28 h-28 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
                 <img
-                  src="./src/assets/Customer-icons/Gucci.png"
+                  src="./src/assets/Customer-icons/Gucci.png"                       
                   alt="Gucci"
-                  className="w-20 h-20 object-contain"
+                  className="w-20 h-20 object-contain"        
                 />
+                                
               </motion.div>
 
               <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
@@ -269,7 +273,7 @@ export default function Customers() {
                 />
               </motion.div>
               <div className="w-6 h-6 bg-[#5AC8DC] rounded-full" />
-            </div>
+            </div>                                      
 
             {/* Seventh Row */}
             <div className="flex items-center justify-end gap-8 mb-4 mr-18">
@@ -286,7 +290,7 @@ export default function Customers() {
                 <img
                   src="/src/assets/Customer-icons/Puma.png"
                   alt="Puma"
-                  className="w-16 h-16 object-contain"
+                  className="w-16 h-16 object-contain"             
                 />
               </motion.div>
 
@@ -299,7 +303,7 @@ export default function Customers() {
               </motion.div>
             </div>
 
-            {/* Eighth Row */}
+            {/* Eighth Row */}                                                                           
             <div className="flex items-center justify-end gap-8 mb-4 mr-8">
               <div className="w-4 h-4 bg-[#5AC8DC] rounded-full" />
               <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
@@ -307,7 +311,7 @@ export default function Customers() {
                   src="/src/assets/Customer-icons/Starbuck.png"
                   alt="Starbucks"
                   className="w-16 h-16 object-contain"
-                />
+                />                                                                 
               </motion.div>
 
               <motion.div className="w-28 h-28 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
@@ -316,7 +320,7 @@ export default function Customers() {
                   alt="Hyundai"
                   className="w-20 h-20 object-contain"
                 />
-              </motion.div>
+              </motion.div>                                                                                         
 
               <motion.div className="w-28 h-28 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
                 <img
@@ -326,8 +330,8 @@ export default function Customers() {
                 />
               </motion.div>
               <div className="w-7 h-7 bg-[#5AC8DC] rounded-full" />
-            </div>
-
+            </div>   
+                                  
             {/* Ninth Row */}
             <div className="flex items-center justify-end gap-8 mb-4 mr-8">
               <motion.div className="w-20 h-20 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
@@ -336,14 +340,14 @@ export default function Customers() {
                   alt="Louis Vuitton"
                   className="w-10 h-10 object-contain"
                 />
-              </motion.div>
-
+              </motion.div>                                          
+                                                                                
               <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
-                <img
+                <img 
                   src="/src/assets/Customer-icons/Double.png"
                   alt="Mastercard"
                   className="w-16 h-16 object-contain"
-                />
+                />              
               </motion.div>
 
               <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
@@ -364,7 +368,7 @@ export default function Customers() {
                   alt="Lacoste"
                   className="w-16 h-16 object-contain"
                 />
-              </motion.div>
+              </motion.div>            
 
               <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
                 <img
@@ -372,7 +376,7 @@ export default function Customers() {
                   alt="Rolex"
                   className="w-16 h-16 object-contain"
                 />
-              </motion.div>
+              </motion.div>            
 
               <motion.div className="w-20 h-20 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
                 <img
@@ -401,7 +405,7 @@ export default function Customers() {
                   alt="coca-cola"
                   className="w-16 h-16 object-contain"
                 />
-              </motion.div>
+              </motion.div>                                       
 
               <motion.div className="w-20 h-20 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-4">
                 <img
@@ -421,8 +425,8 @@ export default function Customers() {
                   alt="H&M"
                   className="w-20 h-20 object-contain"
                 />
-              </motion.div>
-
+              </motion.div>     
+               
               <motion.div className="w-24 h-24 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-4">
                 <img
                   src="/src/assets/Customer-icons/Puma.png"
@@ -465,7 +469,7 @@ export default function Customers() {
                 />
               </motion.div>
               <div className="w-7 h-7 bg-[#B3FEA9] rounded-full" />
-            </div>
+            </div>                     
 
             {/* Ninth Row */}
             <div className="flex items-center justify-end gap-8 mb-4 mr-8">
@@ -473,7 +477,7 @@ export default function Customers() {
                 <img
                   src="/src/assets/Customer-icons/vl.png"
                   alt="Louis Vuitton"
-                  className="w-10 h-10 object-contain"
+                  className="w-10 h-10 object-contain"                 
                 />
               </motion.div>
 
@@ -491,9 +495,9 @@ export default function Customers() {
                   alt="Chanel"
                   className="w-16 h-16 object-contain"
                 />
-              </motion.div>
+              </motion.div>   
               <div className="w-7 h-7 bg-[#B3FEA9] rounded-full" />
-            </div>
+            </div>                          
 
             {/* Tenth Row */}
             <div className="flex items-center justify-end gap-4 mb-8">
@@ -503,7 +507,7 @@ export default function Customers() {
                   alt="Lacoste"
                   className="w-16 h-16 object-contain"
                 />
-              </motion.div>
+              </motion.div>                                                                                                                                                                                                                                                                                                                                                                       
 
               <motion.div className="w-24 h-24 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-4">
                 <img
@@ -512,14 +516,14 @@ export default function Customers() {
                   className="w-16 h-16 object-contain"
                 />
               </motion.div>
-
+                         
               <motion.div className="w-20 h-20 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-4">
                 <img
                   src="/src/assets/Customer-icons/versace.png"
                   alt="versace"
                   className="w-10 h-10 object-contain"
                 />
-              </motion.div>
+              </motion.div>    
             </div>
           </motion.div>
         </div>
@@ -527,3 +531,4 @@ export default function Customers() {
     </section>
   );
 }
+                                                                                                                               
