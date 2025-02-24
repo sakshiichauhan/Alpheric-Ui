@@ -5,7 +5,7 @@ export default function Customers() {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["start start", "end end"],
+        offset: ["start start", "end end"],             
     });
 
     const translateX = useTransform(scrollYProgress, [0, 3], [0, 600]);
@@ -18,7 +18,7 @@ export default function Customers() {
     const y2 = useTransform(scrollYProgress, [0.3, 0.8], [250, 0]);
     const y3 = useTransform(scrollYProgress, [0.8, 1], [300, 0]);
 
-    return (
+    return (    
         <section className="relative w-full h-[300vh] flex items-center justify-center bg-white">
             <div className="w-full max-w-7xl flex">
                 {/* Left Side */}
@@ -33,8 +33,8 @@ export default function Customers() {
                                 scaleY: useTransform(scrollYProgress, [0, 0.9], [0, 1], [0, 1]),
                                 originY: 0
                             }}
-                        />
-                    </div>
+                        />                                          
+                    </div>                                                 
 
                     <ul className="text-lg space-y-60 relative h-full pl-12">
                         <motion.div
@@ -125,7 +125,7 @@ export default function Customers() {
                             <div className="w-7 h-7 bg-white rounded-full" />
                             <motion.div className="w-28 h-28 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
                                 <img
-                                    src=". /src/assets/Customer-icons/Hm.png"
+                                    src="/src/assets/Customer-icons/Hm.png"
                                     alt="H&M"
                                     className="w-20 h-20 object-contain"
                                 />
