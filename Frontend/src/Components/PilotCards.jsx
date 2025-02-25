@@ -7,7 +7,7 @@ const PilotCards = ({
   duration = "2 weeks",
   buttonText = "Book a pilot",                                       
   onButtonClick,
-  imageSrc,    
+  imageSrc,       
 }) => {
   return (
     <div className="font-instrument-sans relative w-full h-[550px] flex justify-center overflow-hidden">
