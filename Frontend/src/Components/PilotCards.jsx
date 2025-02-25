@@ -5,9 +5,9 @@ const PilotCards = ({
   title = "Pilot for You",
   subtitle = "Your idea or concept = our solution.",
   duration = "2 weeks",
-  buttonText = "Book a pilot",
+  buttonText = "Book a pilot",                                       
   onButtonClick,
-  imageSrc,
+  imageSrc,    
 }) => {
   return (
     <div className="font-instrument-sans relative w-full h-[550px] flex justify-center overflow-hidden">
@@ -18,7 +18,7 @@ const PilotCards = ({
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40"></div>
-      </div>
+      </div>                                    
 
       <div className="relative h-full flex items-center px-30 max-w-7xl mx-auto w-full">
         <div className="max-w-xl">
