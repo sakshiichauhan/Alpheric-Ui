@@ -9,11 +9,10 @@ export default function Customers() {
     offset: ["start start", "end end"],
   });
 
-  // Animate horizontally from 0 to -600 px as user scrolls
-  // (Pulling the entire set of logos from right to left)
+  // Horizontal translation for all circles
   const translateX = useTransform(scrollYProgress, [0, 3], [0, -600]);
 
-  // Your fade + slide transforms for the left text
+  // Text animation
   const opacity1 = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
   const opacity2 = useTransform(scrollYProgress, [0.26, 0.45, 0.7], [0, 1, 0]);
   const opacity3 = useTransform(scrollYProgress, [0.5, 0.9], [0, 0.9]);
@@ -25,13 +24,11 @@ export default function Customers() {
   return (
     <section className="relative w-full flex items-center justify-center bg-white">
       <div className="max-w-screen flex">
-        {/* Left Side (text + progress bar) */}
+        {/* Left Side (Text + Vertical Scroll Bar) */}
         <div className="w-1/3 flex flex-col justify-start sticky top-10 h-[100vh]">
           <h2 className="text-[84px] mb-16 font-poppins font-semibold">
             Customers
           </h2>
-
-          {/* Vertical Scroll Progress Bar */}
           <div className="absolute left-5 top-[180px] h-[40vh] w-[4px] bg-gray-200/50">
             <motion.div
               className="absolute h-full w-full bg-black"
@@ -42,7 +39,6 @@ export default function Customers() {
             />
           </div>
 
-          {/* Removed the extra div; apply m-3 directly to the <ul> */}
           <ul className="m-3 text-lg space-y-60 relative h-full pl-12">
             {/* Section 1 */}
             <motion.div
@@ -101,7 +97,7 @@ export default function Customers() {
           </ul>
         </div>
 
-        {/* Right Side - Sticky container (top-right to bottom-left) */}
+        {/* Right Side (Circles / Logos) */}
         <div
           className="w-2/3 h-[200vh] sticky top-0 flex overflow-x-visible"
           ref={ref}
@@ -110,340 +106,438 @@ export default function Customers() {
             style={{ x: translateX, originX: 1 }}
             className="relative w-[800px] top-0 m-3"
           >
-            {/* Row 1 (white) */}
+            {/* Row 1 (White) */}
             <motion.div
               style={{ position: "absolute", top: 0, right: 0 }}
-              className="flex items-center gap-10 m-3"
+              className="flex items-center gap-6"
             >
               <div className="w-6 h-6 bg-white rounded-full" />
-              <div className="w-2 h-2 bg-white rounded-full" />
-              <motion.div className="w-28 h-28 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
+              <div className="w-3 h-3 bg-white rounded-full" />
+              <motion.div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="./src/assets/Customer-icons/Gucci.png"
                   alt="Gucci"
-                  className="w-20 h-20 object-contain"
+                  className="w-16 h-16 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
                 <img
                   src="./src/assets/Customer-icons/coca-cola.png"
                   alt="coca-cola"
-                  className="w-16 h-16 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center p-4 m-3">
+              <motion.div className="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="./src/assets/Customer-icons/Rolex.png"
                   alt="Rolex"
-                  className="w-10 h-10 object-contain"
+                  className="w-8 h-8 object-contain"
                 />
               </motion.div>
             </motion.div>
 
-            {/* Row 2 (white) */}
+            {/* Row 2 (White) */}
             <motion.div
-              style={{ position: "absolute", top: 125, right: 30 }}
-              className="flex items-center gap-8"
+              style={{ position: "absolute", top: 140, right: 30 }}
+              className="flex items-center gap-6"
             >
-              <div className="w-7 h-7 bg-white rounded-full" />
-              <motion.div className="w-28 h-28 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
+              <div className="w-5 h-5 bg-white rounded-full" />
+              <motion.div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Hm.png"
                   alt="H&M"
-                  className="w-20 h-20 object-contain"
+                  className="w-16 h-16 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Puma.png"
                   alt="Puma"
-                  className="w-16 h-16 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/versace.png"
                   alt="Versace"
-                  className="w-18 h-18 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </motion.div>
             </motion.div>
 
-            {/* Row 3 (white) */}
+            {/* Row 3 (White) */}
             <motion.div
-              style={{ position: "absolute", top: 238, right: 90 }}
-              className="flex items-center gap-8"
+              style={{ position: "absolute", top: 280, right: 70 }}
+              className="flex items-center gap-5"
             >
-              <div className="w-4 h-4 bg-white rounded-full" />
-              <motion.div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
+              <div className="w-3 h-3 bg-white rounded-full" />
+              <motion.div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Starbuck.png"
                   alt="Starbucks"
-                  className="w-16 h-16 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
-              </motion.div>    
-              <motion.div className="w-28 h-28 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
+              </motion.div>
+              <motion.div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Hyundai.png"
                   alt="Hyundai"
-                  className="w-20 h-20 object-contain"
+                  className="w-16 h-16 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-28 h-28 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Rage.png"
                   alt="Zara"
-                  className="w-20 h-20 object-contain"
+                  className="w-16 h-16 object-contain"
                 />
               </motion.div>
             </motion.div>
 
-            {/* Row 4 (white) */}
+            {/* Row 4 (White) */}
             <motion.div
-              style={{ position: "absolute", top: 350, right: 120 }}
-              className="flex items-center gap-8"
+              style={{ position: "absolute", top: 420, right: 100 }}
+              className="flex items-center gap-6"
             >
-              <motion.div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/vl.png"
                   alt="Louis Vuitton"
-                  className="w-10 h-10 object-contain"
+                  className="w-8 h-8 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Double.png"
                   alt="Mastercard"
-                  className="w-16 h-16 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Chanel.png"
                   alt="Chanel"
-                  className="w-16 h-16 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </motion.div>
             </motion.div>
 
-            {/* Row 5 (white) */}
+            {/* Row 5 (White) */}
             <motion.div
-              style={{ position: "absolute", top: 450, right: 140 }}
-              className="flex items-center gap-8"
+              style={{ position: "absolute", top: 560, right: 130 }}
+              className="flex items-center gap-6"
             >
-              <motion.div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Lacoste.png"
                   alt="Lacoste"
-                  className="w-16 h-16 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Rolex.png"
                   alt="Rolex"
-                  className="w-16 h-16 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/versace.png"
-                  alt="versace"
-                  className="w-10 h-10 object-contain"
+                  alt="Versace"
+                  className="w-8 h-8 object-contain"
                 />
               </motion.div>
             </motion.div>
 
-            {/* Row 6 (blue) */}
+            {/* Row 6 (Blue) */}
             <motion.div
-              style={{ position: "absolute", top: 550, right: 160 }}
-              className="flex items-center gap-8"
+              style={{ position: "absolute", top: 700, right: 160 }}
+              className="flex items-center gap-6"
             >
               <div className="w-6 h-6 bg-[#5AC8DC] rounded-full" />
-              <div className="w-2 h-2 bg-[#5AC8DC] rounded-full" />
-              <motion.div className="w-28 h-28 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
+              <div className="w-3 h-3 bg-[#5AC8DC] rounded-full" />
+              <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="./src/assets/Customer-icons/Gucci.png"
                   alt="Gucci"
-                  className="w-20 h-20 object-contain"
-                />
-              </motion.div>
-              <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
-                <img
-                  src="/src/assets/Customer-icons/coca-cola.png"
-                  alt="coca-cola"
                   className="w-16 h-16 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-20 h-20 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-20 h-20 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
+                <img
+                  src="/src/assets/Customer-icons/coca-cola.png"
+                  alt="coca-cola"
+                  className="w-12 h-12 object-contain"
+                />
+              </motion.div>
+              <motion.div className="w-16 h-16 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Rolex.png"
                   alt="Rolex"
-                  className="w-10 h-10 object-contain"
+                  className="w-8 h-8 object-contain"
                 />
               </motion.div>
             </motion.div>
 
-            {/* Row 7 (blue) */}
+            {/* Row 7 (Blue) */}
             <motion.div
-              style={{ position: "absolute", top: 665, right: 180 }}
-              className="flex items-center gap-8"
+              style={{ position: "absolute", top: 840, right: 180 }}
+              className="flex items-center gap-6"
             >
-              <div className="w-7 h-7 bg-[#5AC8DC] rounded-full" />
-              <motion.div className="w-28 h-28 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
+              <div className="w-5 h-5 bg-[#5AC8DC] rounded-full" />
+              <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/hm.png"
                   alt="H&M"
-                  className="w-20 h-20 object-contain"
+                  className="w-16 h-16 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-20 h-20 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Puma.png"
                   alt="Puma"
-                  className="w-16 h-16 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-20 h-20 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/versace.png"
                   alt="Versace"
-                  className="w-18 h-18 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </motion.div>
             </motion.div>
 
-            {/* Row 8 (blue) */}
+            {/* Row 8 (Blue) */}
             <motion.div
-              style={{ position: "absolute", top: 780, right: 210 }}
-              className="flex items-center gap-8"
+              style={{ position: "absolute", top: 980, right: 210 }}
+              className="flex items-center gap-5"
             >
-              <div className="w-4 h-4 bg-[#5AC8DC] rounded-full" />
-              <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
+              <div className="w-3 h-3 bg-[#5AC8DC] rounded-full" />
+              <motion.div className="w-20 h-20 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Starbuck.png"
                   alt="Starbucks"
-                  className="w-16 h-16 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-28 h-28 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Hyundai.png"
                   alt="Hyundai"
-                  className="w-20 h-20 object-contain"
+                  className="w-16 h-16 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-28 h-28 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Rage.png"
                   alt="Zara"
-                  className="w-20 h-20 object-contain"
+                  className="w-16 h-16 object-contain"
                 />
               </motion.div>
             </motion.div>
 
-            {/* Row 9 (blue) */}
+            {/* Row 9 (Blue) */}
             <motion.div
-              style={{ position: "absolute", top: 895, right: 230 }}
-              className="flex items-center gap-8"
+              style={{ position: "absolute", top: 1120, right: 230 }}
+              className="flex items-center gap-6"
             >
-              <motion.div className="w-20 h-20 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-16 h-16 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/vl.png"
                   alt="Louis Vuitton"
-                  className="w-10 h-10 object-contain"
+                  className="w-8 h-8 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-20 h-20 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Double.png"
                   alt="Mastercard"
-                  className="w-16 h-16 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-20 h-20 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Chanel.png"
                   alt="Chanel"
-                  className="w-16 h-16 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </motion.div>
             </motion.div>
-                                 
-            {/* Row 10 (blue) */}
+
+            {/* Row 10 (Blue) */}
             <motion.div
-              style={{ position: "absolute", top: 995, right: 240 }}
-              className="flex items-center gap-8"
+              style={{ position: "absolute", top: 1260, right: 240 }}
+              className="flex items-center gap-6"
             >
-              <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-20 h-20 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Lacoste.png"
                   alt="Lacoste"
-                  className="w-16 h-16 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-20 h-20 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Rolex.png"
                   alt="Rolex"
-                  className="w-16 h-16 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-20 h-20 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-16 h-16 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/versace.png"
                   alt="versace"
-                  className="w-10 h-10 object-contain"
+                  className="w-8 h-8 object-contain"
                 />
               </motion.div>
-            </motion.div>    
+            </motion.div>
 
-            {/* Row 11 (green) */}
+            {/* Row 11 (Green) */}
             <motion.div
-              style={{ position: "absolute", top: 1090, right: 260 }}
-              className="flex items-center gap-8"
+              style={{ position: "absolute", top: 1400, right: 260 }}
+              className="flex items-center gap-6"
             >
               <div className="w-6 h-6 bg-[#B3FEA9] rounded-full" />
-              <div className="w-2 h-2 bg-[#B3FEA9] rounded-full" />
-              <motion.div className="w-28 h-28 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-4">
+              <div className="w-3 h-3 bg-[#B3FEA9] rounded-full" />
+              <motion.div className="w-24 h-24 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="./src/assets/Customer-icons/Gucci.png"
                   alt="Gucci"
-                  className="w-20 h-20 object-contain"
-                />
-              </motion.div>
-              <motion.div className="w-24 h-24 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-4">
-                <img
-                  src="/src/assets/Customer-icons/coca-cola.png"
-                  alt="coca-cola"
                   className="w-16 h-16 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-20 h-20 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-4">
-                <img
-                  src="/src/assets/Customer-icons/Rolex.png"
-                  alt="Rolex"
-                  className="w-10 h-10 object-contain"
-                ></img>
-              </motion.div>
-              <motion.div
-                style={{ position: "absolute", top: 1090, right: 260 }}
-                className="flex items-center gap-8"
-              >
+              <motion.div className="w-20 h-20 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/coca-cola.png"
                   alt="coca-cola"
-                  className="w-16 h-16 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </motion.div>
-              <motion.div className="w-20 h-20 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-4">
+              <motion.div className="w-16 h-16 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Rolex.png"
                   alt="Rolex"
-                  className="w-10 h-10 object-contain"
-                ></img>
+                  className="w-8 h-8 object-contain"
+                />
               </motion.div>
             </motion.div>
+
+            {/* Row 12 (Green) */}
+            <motion.div
+              style={{ position: "absolute", top: 1540, right: 260 }}
+              className="flex items-center gap-6"
+            >
+              <div className="w-5 h-5 bg-[#B3FEA9] rounded-full" />
+              <motion.div className="w-24 h-24 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
+                <img
+                  src="/src/assets/Customer-icons/hm.png"
+                  alt="H&M"
+                  className="w-16 h-16 object-contain"
+                />
+              </motion.div>
+              <motion.div className="w-20 h-20 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
+                <img
+                  src="/src/assets/Customer-icons/Puma.png"
+                  alt="Puma"
+                  className="w-12 h-12 object-contain"
+                />
+              </motion.div>
+              <motion.div className="w-20 h-20 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
+                <img
+                  src="/src/assets/Customer-icons/versace.png"
+                  alt="Versace"
+                  className="w-12 h-12 object-contain"
+                />
+              </motion.div>
+            </motion.div>
+
+            {/* Row 13 (Green) */}
+            <motion.div
+              style={{ position: "absolute", top: 1680, right: 260 }}
+              className="flex items-center gap-5"
+            >
+              <div className="w-3 h-3 bg-[#B3FEA9] rounded-full" />
+              <motion.div className="w-20 h-20 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
+                <img
+                  src="/src/assets/Customer-icons/Starbuck.png"
+                  alt="Starbucks"
+                  className="w-12 h-12 object-contain"
+                />
+              </motion.div>
+              <motion.div className="w-24 h-24 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
+                <img
+                  src="/src/assets/Customer-icons/Hyundai.png"
+                  alt="Hyundai"
+                  className="w-16 h-16 object-contain"
+                />
+              </motion.div>
+              <motion.div className="w-24 h-24 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
+                <img
+                  src="/src/assets/Customer-icons/Rage.png"
+                  alt="Zara"
+                  className="w-16 h-16 object-contain"
+                />
+              </motion.div>
+            </motion.div>
+
+            {/* Row 14 (Green) */}
+            <motion.div
+              style={{ position: "absolute", top: 1820, right: 260 }}
+              className="flex items-center gap-6"
+            >
+              <motion.div className="w-16 h-16 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
+                <img
+                  src="/src/assets/Customer-icons/vl.png"
+                  alt="Louis Vuitton"
+                  className="w-8 h-8 object-contain"
+                />
+              </motion.div>
+              <motion.div className="w-20 h-20 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
+                <img
+                  src="/src/assets/Customer-icons/Double.png"
+                  alt="Mastercard"
+                  className="w-12 h-12 object-contain"
+                />
+              </motion.div>
+              <motion.div className="w-20 h-20 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
+                <img
+                  src="/src/assets/Customer-icons/Chanel.png"
+                  alt="Chanel"
+                  className="w-12 h-12 object-contain"
+                />
+              </motion.div>
+            </motion.div>
+
+            {/* Row 15 (Green) */}
+            <motion.div
+              style={{ position: "absolute", top: 1960, right: 270 }}
+              className="flex items-center gap-6"
+            >
+              <motion.div className="w-20 h-20 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
+                <img
+                  src="/src/assets/Customer-icons/Lacoste.png"
+                  alt="Lacoste"
+                  className="w-12 h-12 object-contain"
+                />
+              </motion.div>
+              <motion.div className="w-20 h-20 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
+                <img
+                  src="/src/assets/Customer-icons/Rolex.png"
+                  alt="Rolex"
+                  className="w-12 h-12 object-contain"
+                />
+              </motion.div>
+              <motion.div className="w-16 h-16 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
+                <img
+                  src="/src/assets/Customer-icons/versace.png"
+                  alt="versace"
+                  className="w-8 h-8 object-contain"
+                />
+              </motion.div>
+            </motion.div>
+            
           </motion.div>
         </div>
       </div>
