@@ -510,7 +510,7 @@ export default function Customers() {
               </motion.div>
             </motion.div>
 
-            {/* Row 15 (Green) */}
+        
             <motion.div
               style={{ position: "absolute", top: 1960, right: 270 }}
               className="flex items-center gap-6"
