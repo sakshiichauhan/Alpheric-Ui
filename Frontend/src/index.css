@@ -57,3 +57,6 @@
     perspective: 1000px;
     transform-style: preserve-3d;
   }
+  .perspective-2000 {
+    perspective: 2000px;
+  }

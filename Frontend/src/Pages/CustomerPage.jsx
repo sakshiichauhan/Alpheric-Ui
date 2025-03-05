@@ -31,7 +31,7 @@ export default function Customers() {
           </h2>
           <div className="absolute left-5 top-[180px] h-[40vh] w-[4px] bg-gray-200/50">
             <motion.div
-              className="absolute h-full w-full bg-blue-500"
+              className="absolute h-full w-full bg-black"
               style={{
                 scaleY: useTransform(scrollYProgress, [0, 0.9], [0, 1]),
                 originY: 0,
@@ -53,11 +53,10 @@ export default function Customers() {
                 <p className="text-[32px] font-bold text-gray-800">
                   Visibility & Communication
                 </p>
-                <ul className="text-[16px] pl-8 text-gray-600 mt-4 space-y-2">
-                  <li>• Cyber Risk Quantification</li>
-                  <li>• Attack Surface Management</li>
-                  <li>• Board & SEC Materiality Reporting</li>
-                </ul>
+                <p className="text-[18px] pl-8 text-gray-500 mt-2">
+                  Take the assessment and get your career matches, personality
+                  archetype, and more along the way.
+                </p>
               </motion.div>
             </motion.div>
 
@@ -70,11 +69,10 @@ export default function Customers() {
                 <p className="text-[32px] text-gray-800 font-bold">
                   Operational Prioritization
                 </p>
-                <ul className="text-[16px] pl-8 text-gray-600 mt-4 space-y-2">
-                  <li>• Continuous Controls Monitoring</li>
-                  <li>• Risk-based Vulnerability Management</li>
-                  <li>• Controls Effectiveness & Prioritization</li>
-                </ul>
+                <p className="text-[18px] pl-8 text-gray-500 text-base mt-2">
+                  Find out what makes you stand apart from others and why
+                  certain careers are great fits for you.
+                </p>
               </div>
             </motion.div>
 
@@ -87,22 +85,27 @@ export default function Customers() {
                 <p className="text-[32px] text-gray-800 font-bold">
                   Justification & Planning
                 </p>
-                <ul className="text-[16px] pl-8 text-gray-600 mt-4 space-y-2">
-                  <li>• Optimize Cyber Security Budgets</li>
-                  <li>• Identify Highest ROI Initiatives</li>
-                  <li>• Reduce Cyber Insurance Premiums</li>
-                </ul>
+                <p className="text-[18px] pl-8 text-gray-500 text-base mt-2">
+                  Find all the information you need to know about your dream
+                  career. Then make a plan to get there.
+                </p>
               </div>
             </motion.div>
           </ul>
         </div>
 
         {/* Right Side (Circles / Logos) - now static without animation */}
-        <div className="w-2/3 h-[200vh] sticky top-0 flex overflow-x-visible" ref={ref}>
+        <div
+          className="w-2/3 h-[200vh] sticky top-0 flex overflow-x-visible"
+          ref={ref}
+        >
           {/* We can use standard divs instead of motion.div here */}
           <div className="relative w-[800px] top-0 m-3">
             {/* Row 1 (White) */}
-            <div style={{ position: "absolute", top: 0, right: 0 }} className="flex items-center gap-6">
+            <div
+              style={{ position: "absolute", top: 0, right: 0 }}
+              className="flex items-center gap-6"
+            >
               <div className="w-6 h-6 bg-white rounded-full" />
               <div className="w-3 h-3 bg-white rounded-full" />
               <div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
@@ -129,7 +132,10 @@ export default function Customers() {
             </div>
 
             {/* Row 2 (White) */}
-            <div style={{ position: "absolute", top: 140, right: 30 }} className="flex items-center gap-6">
+            <div
+              style={{ position: "absolute", top: 140, right: 30 }}
+              className="flex items-center gap-6"
+            >
               <div className="w-5 h-5 bg-white rounded-full" />
               <div className="w-24 h-24 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
@@ -155,7 +161,10 @@ export default function Customers() {
             </div>
 
             {/* Row 3 (White) */}
-            <div style={{ position: "absolute", top: 280, right: 70 }} className="flex items-center gap-5">
+            <div
+              style={{ position: "absolute", top: 280, right: 70 }}
+              className="flex items-center gap-5"
+            >
               <div className="w-3 h-3 bg-white rounded-full" />
               <div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
@@ -181,7 +190,10 @@ export default function Customers() {
             </div>
 
             {/* Row 4 (White) */}
-            <div style={{ position: "absolute", top: 420, right: 100 }} className="flex items-center gap-6">
+            <div
+              style={{ position: "absolute", top: 420, right: 100 }}
+              className="flex items-center gap-6"
+            >
               <div className="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/vl.png"
@@ -206,7 +218,10 @@ export default function Customers() {
             </div>
 
             {/* Row 5 (White) */}
-            <div style={{ position: "absolute", top: 560, right: 130 }} className="flex items-center gap-6">
+            <div
+              style={{ position: "absolute", top: 560, right: 130 }}
+              className="flex items-center gap-6"
+            >
               <div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Lacoste.png"
@@ -231,7 +246,10 @@ export default function Customers() {
             </div>
 
             {/* Row 6 (Blue) */}
-            <div style={{ position: "absolute", top: 700, right: 160 }} className="flex items-center gap-6">
+            <div
+              style={{ position: "absolute", top: 700, right: 160 }}
+              className="flex items-center gap-6"
+            >
               <div className="w-6 h-6 bg-[#5AC8DC] rounded-full" />
               <div className="w-3 h-3 bg-[#5AC8DC] rounded-full" />
               <div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
@@ -258,7 +276,10 @@ export default function Customers() {
             </div>
 
             {/* Row 7 (Blue) */}
-            <div style={{ position: "absolute", top: 840, right: 180 }} className="flex items-center gap-6">
+            <div
+              style={{ position: "absolute", top: 840, right: 180 }}
+              className="flex items-center gap-6"
+            >
               <div className="w-5 h-5 bg-[#5AC8DC] rounded-full" />
               <div className="w-24 h-24 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
@@ -284,7 +305,10 @@ export default function Customers() {
             </div>
 
             {/* Row 8 (Blue) */}
-            <div style={{ position: "absolute", top: 980, right: 210 }} className="flex items-center gap-5">
+            <div
+              style={{ position: "absolute", top: 980, right: 210 }}
+              className="flex items-center gap-5"
+            >
               <div className="w-3 h-3 bg-[#5AC8DC] rounded-full" />
               <div className="w-20 h-20 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
@@ -310,7 +334,10 @@ export default function Customers() {
             </div>
 
             {/* Row 9 (Blue) */}
-            <div style={{ position: "absolute", top: 1120, right: 230 }} className="flex items-center gap-6">
+            <div
+              style={{ position: "absolute", top: 1120, right: 230 }}
+              className="flex items-center gap-6"
+            >
               <div className="w-16 h-16 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/vl.png"
@@ -335,7 +362,10 @@ export default function Customers() {
             </div>
 
             {/* Row 10 (Blue) */}
-            <div style={{ position: "absolute", top: 1260, right: 240 }} className="flex items-center gap-6">
+            <div
+              style={{ position: "absolute", top: 1260, right: 240 }}
+              className="flex items-center gap-6"
+            >
               <div className="w-20 h-20 bg-[#5AC8DC] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Lacoste.png"
@@ -360,7 +390,10 @@ export default function Customers() {
             </div>
 
             {/* Row 11 (Green) */}
-            <div style={{ position: "absolute", top: 1400, right: 260 }} className="flex items-center gap-6">
+            <div
+              style={{ position: "absolute", top: 1400, right: 260 }}
+              className="flex items-center gap-6"
+            >
               <div className="w-6 h-6 bg-[#B3FEA9] rounded-full" />
               <div className="w-3 h-3 bg-[#B3FEA9] rounded-full" />
               <div className="w-24 h-24 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
@@ -387,7 +420,10 @@ export default function Customers() {
             </div>
 
             {/* Row 12 (Green) */}
-            <div style={{ position: "absolute", top: 1540, right: 260 }} className="flex items-center gap-6">
+            <div
+              style={{ position: "absolute", top: 1540, right: 260 }}
+              className="flex items-center gap-6"
+            >
               <div className="w-5 h-5 bg-[#B3FEA9] rounded-full" />
               <div className="w-24 h-24 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
@@ -413,7 +449,10 @@ export default function Customers() {
             </div>
 
             {/* Row 13 (Green) */}
-            <div style={{ position: "absolute", top: 1680, right: 260 }} className="flex items-center gap-5">
+            <div
+              style={{ position: "absolute", top: 1680, right: 260 }}
+              className="flex items-center gap-5"
+            >
               <div className="w-3 h-3 bg-[#B3FEA9] rounded-full" />
               <div className="w-20 h-20 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
@@ -439,7 +478,10 @@ export default function Customers() {
             </div>
 
             {/* Row 14 (Green) */}
-            <div style={{ position: "absolute", top: 1820, right: 260 }} className="flex items-center gap-6">
+            <div
+              style={{ position: "absolute", top: 1820, right: 260 }}
+              className="flex items-center gap-6"
+            >
               <div className="w-16 h-16 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/vl.png"
@@ -464,7 +506,10 @@ export default function Customers() {
             </div>
 
             {/* Row 15 (Green) */}
-            <div style={{ position: "absolute", top: 1960, right: 270 }} className="flex items-center gap-6">
+            <div
+              style={{ position: "absolute", top: 1960, right: 270 }}
+              className="flex items-center gap-6"
+            >
               <div className="w-20 h-20 bg-[#B3FEA9] rounded-full shadow-sm flex items-center justify-center p-2">
                 <img
                   src="/src/assets/Customer-icons/Lacoste.png"

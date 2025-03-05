@@ -58,14 +58,46 @@ const Questionaire = () => {
 
       <div className="relative w-[671px]">
         <div className="relative h-[289px]">
-          <AnimatePresence mode="popLayout" initial={false}>
-            <QuestionaireCard
-              key={currentStep}
-              question={questions[currentStep - 1]}
-              stepNumber={currentStep}
-              totalSteps={questions.length}
-              onAnswer={handleAnswer}
-            />
+          <AnimatePresence mode="popLayout">
+            {questions.map((question, index) => {
+              if (index >= currentStep - 1 && index < currentStep + 2) {
+                const stackPosition = index - currentStep + 1;
+                return (
+                  <motion.div
+                    key={index}
+                    className="absolute w-full"
+                    initial={{ y: "100vh" }}
+                    animate={{
+                      y: stackPosition * 8,
+                      scale: 1 - stackPosition * 0.02,
+                      opacity: 1 - stackPosition * 0.2,
+                      transition: {
+                        duration: 0.5,
+                        ease: "easeOut",
+                      },
+                    }}
+                    exit={{
+                      y: "-100vh",
+                      transition: {
+                        duration: 0.5,
+                        ease: "easeIn",
+                      },
+                    }}
+                    style={{
+                      zIndex: 10 - stackPosition,
+                    }}
+                  >
+                    <QuestionaireCard
+                      question={question}
+                      stepNumber={index + 1}
+                      totalSteps={questions.length}
+                      onAnswer={handleAnswer}
+                    />
+                  </motion.div>
+                );
+              }
+              return null;
+            })}
           </AnimatePresence>
         </div>
 
