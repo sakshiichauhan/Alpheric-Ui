@@ -11,9 +11,15 @@ import pilot4 from "../../assets/Pilot_assets/pilot_asset_4.png";
 const Pilotpage = () => {
   return (
     <div className="space-y-16">
-      <h1 className="flex justify-center items-center font-instrument-sans font-semibold text-[140px] px-15">
+      
+      <motion.h1
+        className="flex justify-center items-center font-instrument-sans font-semibold text-[140px] px-15"
+        initial={{ scale: 1.2 }}       
+        animate={{ scale: 1 }}         
+        transition={{ duration: 1.5 }} 
+      >
         Book a Pilot
-      </h1>
+      </motion.h1>
 
       <AnimatePresence mode="wait">
         <motion.div
