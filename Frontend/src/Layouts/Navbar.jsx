@@ -34,55 +34,78 @@ const Navbar = () => {
 
 export default Navbar;
 
-// import React, { useState } from 'react';
+// import React, { useState } from "react";
 // import Alphericlogo from "../assets/Homepage/alpheric-icon.png";
+// import { ChevronDown, Menu, X } from "lucide-react";
 
 // const Navbar = () => {
-//     const [activeNav, setActiveNav] = useState("#");
+//     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-//     // Navbar items
-//     const navItems = [
-//         { name: "Consult", id: "#" },
-//         { name: "Build", id: "#about" },
-//         { name: "Design", id: "#design" },
-//         { name: "Host", id: "#host" },
-//         { name: "Secure", id: "#secure" },
-//         { name: "Market", id: "#market" },
-//         { name: "Support", id: "#support" },
-//         { name: "Services", id: "#services" },
-//         { name: "Hire", id: "#hire" },
-//         { name: "Join Us", id: "#joinus" },
-//         { name: "Action", id: "#action" },
-//         { name: "Insights", id: "#insights" }
-//     ];
+//     const toggleMenu = () => {
+//         setIsMenuOpen(!isMenuOpen);
+//     };
 
 //     return (
-//         <div className="fixed top-0 left-0 w-full flex justify-evenly font-urbanist px-6 py-4 m-1 bg-transparent backdrop-blur-md border border-[#5AC8DC] z-50">
-//             <div className='relative z-10'>
-//                 <img src={Alphericlogo} alt="logo" className='w-[px] h-auto'/>
+//         <nav className="fixed top-0 left-0 w-full flex items-center justify-between font-urbanist px-6 py-4 bg-transparent backdrop-blur-md z-50">
+//             {/* Logo */}
+//             <div className="relative z-10">
+//                 <img src={Alphericlogo} alt="logo" className="w-[150px] h-[50px] md:w-[180px] md:h-[55px]" />
 //             </div>
 
-//             <div className="flex gap-6 border border-white rounded-full px-4 py-2 text-lg bg-white/10 backdrop-blur-lg mx-5">
-//                 {navItems.map((item) => (
-//                     <a
-//                         key={item.id}
-//                         href={item.id}
-//                         onClick={() => setActiveNav(item.id)}
-//                         className={`rounded-full transition duration-300 ${activeNav === item.id
-//                                 ? "bg-cyan-200 py-3 m-2 text-black"
-//                                 : "hover:bg-cyan-200 py-3 m-2 hover:text-black"
-//                             }`}
-//                     >
-//                         {item.name}
-//                     </a>
-//                 ))}
+//             {/* Desktop Menu */}
+//             <div className="hidden lg:flex items-center gap-6 border border-white rounded-full px-4 py-2 text-lg backdrop-blur-lg mx-5">
+//                 <a className="flex items-center" href="#">Consult <ChevronDown size={15} /></a>
+//                 <a href="#about">Build</a>
+//                 <a href="#design">Design</a>
+//                 <a href="#host">Host</a>
+//                 <a href="#secure">Secure</a>
+//                 <a href="#market">Market</a>
+//                 <a href="#support">Support</a>
+//                 <a href="#services" className="flex items-center">Services <ChevronDown size={15} /></a>
+//                 <a href="#hire" className="flex items-center">Hire <ChevronDown size={15} /></a>
+//                 <a href="#joinus">Join Us</a>
+//                 <a href="#action">Action</a>
+//                 <a href="#insights">Insights</a>
 //             </div>
 
-//             <button className="px-4 py-2 text-xl rounded-3xl border border-black hover:bg-[#56c8dc] hover:text-white bg-white">
+//             {/* Desktop Sign-Up Button (Hidden on Mobile & Tablet) */}
+//             <button className="hidden lg:block px-6 py-3 text-lg rounded-full bg-black text-white hover:bg-[#56c8dc]">
 //                 Sign Up
 //             </button>
-//         </div>
+
+//             {/* Mobile & Tablet Menu Button */}
+//             <button onClick={toggleMenu} className="lg:hidden p-2 text-gray-700 focus:outline-none">
+//                 {isMenuOpen ? <X size={30} /> : <Menu size={30} />}
+//             </button>
+
+//             {/* Mobile & Tablet Menu */}
+//             <div className={`fixed top-0 right-0 w-4/5 h-screen bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-40 p-6 
+//           ${isMenuOpen ? "translate-x-0" : "translate-x-full"} lg:hidden`}>
+//                 <button onClick={toggleMenu} className="absolute top-5 right-5">
+//                     <X size={30} />
+//                 </button>
+//                 <div className="flex flex-col items-start gap-6 mt-16 text-lg">
+//                     <a href="#" onClick={toggleMenu}>Consult</a>
+//                     <a href="#about" onClick={toggleMenu}>Build</a>
+//                     <a href="#design" onClick={toggleMenu}>Design</a>
+//                     <a href="#host" onClick={toggleMenu}>Host</a>
+//                     <a href="#secure" onClick={toggleMenu}>Secure</a>
+//                     <a href="#market" onClick={toggleMenu}>Market</a>
+//                     <a href="#support" onClick={toggleMenu}>Support</a>
+//                     <a href="#services" onClick={toggleMenu}>Services</a>
+//                     <a href="#hire" onClick={toggleMenu}>Hire</a>
+//                     <a href="#joinus" onClick={toggleMenu}>Join Us</a>
+//                     <a href="#action" onClick={toggleMenu}>Action</a>
+//                     <a href="#insights" onClick={toggleMenu}>Insights</a>
+
+//                     {/* Sign Up Button inside Mobile Menu */}
+//                     <button className="w-full mt-6 px-6 py-3 text-lg rounded-full bg-black text-white hover:bg-[#56c8dc]">
+//                         Sign Up
+//                     </button>
+//                 </div>
+//             </div>
+//         </nav>
 //     );
-// }
+// };
 
 // export default Navbar;

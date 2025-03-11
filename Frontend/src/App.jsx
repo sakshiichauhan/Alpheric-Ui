@@ -1,4 +1,4 @@
-import './App.css'
+// Importing Pages
 import HomePage from './Pages/HomePage'
 import Navbar from './Layouts/Navbar'
 import Design from './Pages/Design'
@@ -12,21 +12,24 @@ import CustomerPage from "./Pages/CustomerPage"
 import Pilotpage from './Pages/Pilot/PilotPage'
 import SolutionPage from './Pages/Solutions/SolutionPage'
 import BriefPage from './Pages/Brief/BriefPage'
+import Fab from "./Components/Fab"
+import Customer from './Pages/Customer'
 
 function App() {
   return (
     <>
       <Navbar />
+      <Fab />
       <div>
         <HomePage />
         <Design />
         <Questionaire />
         <CustomerPage />
         <SolutionPage />
-        <Pilotpage />
         <Vision />
+        <Pilotpage />
         <Next />
-        <BriefPage/>
+        <BriefPage />
         <Hire />
         <Contact />
         <Footer />
