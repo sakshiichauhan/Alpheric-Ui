@@ -98,10 +98,9 @@ const BriefPage = () => {
     });
 
     return (
-        <div>
-            {/* Sticky Scroll Section */}
-            <div ref={containerRef} className="relative h-[300vh]">
-                <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+        <div className="bg-black">
+            <div ref={containerRef} className="relative h-[500vh]">
+                <div className="sticky top-0 h-screen flex items-center overflow-hidden bg-white">
                     <div className="relative w-full max-w-7xl mx-auto">
                         {cardsData.map((card, index) => (
                             <BriefCard

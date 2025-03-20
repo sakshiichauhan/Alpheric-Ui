@@ -24,8 +24,8 @@ const SolutionCard = ({
     const end = (index + 1) * chunk;
 
 
-    const imageFadePortion = 0.2 * chunk;
-    const textFadePortion = 0.4 * chunk;
+    const imageFadePortion = 0.1 * chunk;
+    const textFadePortion = 0.2 * chunk;
 
     const imageOpacity = useTransform(
         smoothScrollYProgress,

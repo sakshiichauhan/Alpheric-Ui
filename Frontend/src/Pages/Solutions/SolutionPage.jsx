@@ -59,7 +59,7 @@ const SolutionPage = () => {
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
-        offset: ["start end", "end end"]
+        offset: ["start start", "end end"]
     });
 
     const totalCards = cardsData.length;
@@ -69,7 +69,7 @@ const SolutionPage = () => {
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
                 className="h-screen flex flex-col justify-center items-center font-instrument-sans"
             >
                 <div className="text-[80px] md:text-[140px] text-center font-semibold">
@@ -83,7 +83,7 @@ const SolutionPage = () => {
                 </div>
             </motion.div>
 
-            <div ref={containerRef} className="relative h-[600vh]">
+            <div ref={containerRef} className="relative h-[500vh]">
                 <div className="sticky top-0 h-screen flex items-center overflow-hidden">
                     <div className="relative w-full max-w-7xl mx-auto">
                         {cardsData.map((card, index) => (
